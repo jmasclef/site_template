@@ -2,12 +2,12 @@
 
 FROM python:3.10-slim-buster
 
-COPY ./src /app/src
+COPY . /app/src/python-flask
 WORKDIR /app
 
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 
-WORKDIR /app/src
+WORKDIR /app/src/python-flask
 
 CMD [ "python3", "server.py"]
